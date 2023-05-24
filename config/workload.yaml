@@ -1,0 +1,25 @@
+apiVersion: carto.run/v1alpha1
+kind: Workload
+metadata:
+  name: tanzu-go-helloworld
+  labels:
+    apps.tanzu.vmware.com/has-tests: true
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/part-of: tanzu-go-helloworld
+spec:
+  params:
+    - name: testing_pipeline_matching_labels
+      value:
+        apps.tanzu.vmware.com/pipeline: test
+        apps.tanzu.vmware.com/language: go
+  serviceClaims:
+  - name: db
+    ref:
+      apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+      kind: ClassClaim
+      name: pgdb-1
+  source:
+    git:
+      ref:
+        branch: main
+      url: https://github.com/billglover/tanzu-go-helloworld.git
