@@ -52,6 +52,9 @@ func run() error {
 		}
 	}
 
+	provider := "unknown"
+	provider, _ = bindings.GetProvider(b[0])
+
 	bURL := fmt.Sprintf("postgres://%s:%s@%s:5432/%s", u, p, host, d)
 	fmt.Println("Binding: ", bURL)
 	pgURL, err := url.Parse(bURL)
@@ -72,7 +75,7 @@ func run() error {
 			fmt.Fprintf(res, "%s", err.Error())
 		}
 
-		fmt.Fprintf(res, "Tanzu does Go too!\n\nvisit: %s", id)
+		fmt.Fprintf(res, "Tanzu does Go too!\n\nvisit: %s\nprovider: %s", id, provider)
 	})
 
 	err = http.ListenAndServe(":8080", mux)
