@@ -42,7 +42,7 @@ func run() error {
 	}
 
 	ip, ok := bindings.Get(b[0], "privateIP")
-	if !ok {
+	if !ok || ip == "" {
 		ip, ok = bindings.Get(b[0], "publicIP")
 		if !ok {
 			return fmt.Errorf("no publicIP or privateIP in binding")
