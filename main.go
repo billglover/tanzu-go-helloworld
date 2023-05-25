@@ -36,9 +36,9 @@ func run() error {
 		return fmt.Errorf("no password in binding")
 	}
 
-	d, ok := bindings.Get(b[0], "db")
+	d, ok := bindings.Get(b[0], "database")
 	if !ok {
-		return fmt.Errorf("no db in binding")
+		return fmt.Errorf("no database in binding")
 	}
 
 	host, ok := bindings.Get(b[0], "host")
