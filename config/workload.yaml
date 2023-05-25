@@ -17,7 +17,7 @@ spec:
     ref:
       apiVersion: services.apps.tanzu.vmware.com/v1alpha1
       kind: ClassClaim
-      name: pgdb-1
+      name: psql-1
   source:
     git:
       ref:
