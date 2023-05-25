@@ -41,15 +41,18 @@ func run() error {
 		return fmt.Errorf("no db in binding")
 	}
 
-	ip, ok := bindings.Get(b[0], "privateIP")
-	if !ok || ip == "" {
-		ip, ok = bindings.Get(b[0], "publicIP")
-		if !ok {
-			return fmt.Errorf("no publicIP or privateIP in binding")
+	host, ok := bindings.Get(b[0], "host")
+	if !ok || host == "" {
+		host, ok = bindings.Get(b[0], "privateIP")
+		if !ok || host == "" {
+			host, ok = bindings.Get(b[0], "publicIP")
+			if !ok {
+				return fmt.Errorf("no host, publicIP or privateIP in binding")
+			}
 		}
 	}
 
-	bURL := fmt.Sprintf("postgres://%s:%s@%s:5432/%s", u, p, ip, d)
+	bURL := fmt.Sprintf("postgres://%s:%s@%s:5432/%s", u, p, host, d)
 	fmt.Println("Binding: ", bURL)
 	pgURL, err := url.Parse(bURL)
 	if err != nil {
