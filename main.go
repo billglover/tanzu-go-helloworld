@@ -50,6 +50,7 @@ func run() error {
 	}
 
 	bURL := fmt.Sprintf("postgres://%s:%s@%s:5432/%s", u, p, ip, d)
+	fmt.Println("Binding: ", bURL)
 	pgURL, err := url.Parse(bURL)
 	if err != nil {
 		return fmt.Errorf("unable to parse URL: %w", err)
