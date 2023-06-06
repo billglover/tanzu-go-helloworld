@@ -5,8 +5,6 @@ metadata:
   description: Tanzu does Go too!
   tags:
   - go
-  - getting-started
-  - good-first-workload
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=tanzu-go-helloworld'
 spec:
