@@ -12,4 +12,4 @@ metadata:
 spec:
   type: service
   lifecycle: experimental
-  owner: bill.dev
+  owner: bglover
