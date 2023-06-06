@@ -10,6 +10,7 @@ metadata:
   annotations:
     'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=tanzu-go-helloworld'
 spec:
-  type: service
-  lifecycle: experimental
-  owner: bglover
+  type: app
+  system: demo
+  lifecycle: dev
+  owner: uki-tanzu-se-org
