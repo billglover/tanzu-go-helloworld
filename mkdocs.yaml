@@ -1,7 +1,11 @@
-site_name: 'example-docs'
+site_name: 'tanzu-go-helloworld'
 
 nav:
   - Home: index.md
 
 plugins:
   - techdocs-core
+  
+theme:
+  name: material
+  font: false

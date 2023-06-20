@@ -8,6 +8,11 @@ metadata:
   annotations:
     backstage.io/kubernetes-label-selector: 'app.kubernetes.io/part-of=tanzu-go-helloworld'
     backstage.io/techdocs-ref: dir:.
+  links:
+  - url: https://github.com/billglover/tanzu-go-helloworld/tree/main/docs
+    title: Edit the docs
+    type: Contribute
+    icon: EditNote
 spec:
   type: service
   system: demo
