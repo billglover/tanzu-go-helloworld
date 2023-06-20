@@ -12,7 +12,7 @@ metadata:
   - url: https://github.com/billglover/tanzu-go-helloworld/tree/main/docs
     title: Edit the docs
     type: Contribute
-    icon: EditNote
+    icon: techdocs
 spec:
   type: service
   system: demo
