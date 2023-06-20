@@ -6,7 +6,8 @@ metadata:
   tags:
   - go
   annotations:
-    'backstage.io/kubernetes-label-selector': 'app.kubernetes.io/part-of=tanzu-go-helloworld'
+    backstage.io/kubernetes-label-selector: 'app.kubernetes.io/part-of=tanzu-go-helloworld'
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   system: demo
